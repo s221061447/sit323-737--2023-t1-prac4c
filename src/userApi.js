@@ -6,8 +6,7 @@ import crypto from 'crypto';
 const router = express.Router();
 
 // Define endpoint for user addition
-router.get('/addUser', (req, res, next) => {
-    console.log(req.query);
+router.post('/addUser', (req, res, next) => {
     let email = req.query.email;
     let apiKey = crypto.randomBytes(20).toString('hex')
     addUser(email, apiKey);
